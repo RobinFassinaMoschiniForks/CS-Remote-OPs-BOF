@@ -2098,7 +2098,7 @@ alias global_unprotect {
 
 beacon_command_register(
     "global_unprotect",
-    "Attempts to find, decrypt, and download Global Protect VPN profiles and HIP settings"
+    "Attempts to find, decrypt, and download Global Protect VPN profiles and HIP settings",
     "Usage: global_unprotect
     
     There are no arguments to this command"
