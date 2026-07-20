@@ -6,7 +6,8 @@
     HKCR => 0,
     HKCU => 1,
     HKLM => 2,
-    HKU  => 3
+    HKU  => 3,
+    HKCU_LOCAL_IMP => 4
 );
 #sleep can't handle the actual values... so we'll just add them on the c side :(
 
@@ -862,6 +863,7 @@ Usage:   reg_set reg_set [OPT:HOSTNAME] [HIVE] [KEY] [VALUE] [TYPE] [DATA]
                   values:
                     HKLM
                     HKCU
+                    HKCU_LOCAL_IMP (if impersonating a user, reference their HKCU locally)
                     HKU
                     HKCR
          KEY      Required. The registry path. 
@@ -956,6 +958,7 @@ Usage:   reg_delete [OPT:HOSTNAME] [HIVE] [REGPATH] [OPT:REGVALUE]
                   values:
                     HKLM
                     HKCU
+                    HKCU_LOCAL_IMP (if impersonating a user, reference their HKCU locally)
                     HKU
                     HKCR
          REGPATH  Required. The registry path (deleted if value not given).
@@ -1009,6 +1012,7 @@ Usage:   reg_save [HIVE] [REGPATH] [FILEOUT]
                   values:
                     HKLM
                     HKCU
+                    HKCU_LOCAL_IMP (if impersonating a user, reference their HKCU locally)
                     HKU
                     HKCR
          REGPATH  Required. The registry path to save.
